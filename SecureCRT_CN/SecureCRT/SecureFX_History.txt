@@ -1,0 +1,248 @@
+
+           SecureFX(R) 6.6.1 (Official) -- November 4, 2010
+
+            Copyright (C) 1995-2010 VanDyke Software, Inc.
+                       All rights reserved.
+
+
+This file contains a SecureFX product history.  It includes lists of
+new features, changes, and bug fixes sorted by release.  For a product
+description, installation notes, registration information, and contact
+information, please refer to Readme.txt (downloaded with this 
+installation).
+
+
+Changes in SecureFX 6.6.1 (Official) -- November 4, 2010
+--------------------------------------------------------
+
+Bug fixes:
+
+  - If the file being transferred already existed on the destination
+    and rename was selected in the replace prompt, the specified
+    rename file was not on the destination.
+  - The session .INI-file-only option "Disable MLSX" was not being
+    honored when it was on.
+  - The icons on the Window menu for tabbed groups were not correct.
+
+
+Changes in SecureFX 6.6 (Official) -- October 21, 2010
+------------------------------------------------------
+
+Changes:
+
+  - During synchronize operations, transfer operation output is now
+    sent to the log file in addition to the synchronize view's log
+    window.
+
+
+Changes in SecureFX 6.6 (Beta 6) -- October 14, 2010
+----------------------------------------------------
+
+Bug fixes:
+
+  - When connecting to a server through a SOCKS firewall, multiple
+    username and password prompts were displayed and if they were
+    cancelled, SecureFX crashed.
+  - SecureFX could crash when key generation was cancelled and then
+    the Key Generation Wizard was launched.
+  - When many small files were being downloaded and "Cancel All" was
+    selected, the local window appeared to be stuck in a refresh loop
+    and CPU usage spiked.
+  - If an upload was started and cancelled in a session that did not
+    have a saved password, the session was disconnected and
+    reconnected.
+  - The position of ".." changed after sorting by Date Modified and
+    changing directories.
+  - While connected to a session displaying the tree view, after
+    attempting to change to an invalid directory, the hierarchy was
+    disabled.
+  - The transfer queue context menu items were not in the correct
+    state after "Cancel All" was selected and parallel transfers were
+    in progress.
+
+
+Changes in SecureFX 6.6 (Beta 5) -- September 30, 2010
+------------------------------------------------------
+
+Changes:
+
+  - The following changes were made to log file output:
+    - Status text for upload and download transfers changed from
+      "Remote file closed." to "Source file closed." or "Destination
+      file closed."
+    - "Failed to close remote file." became "Failed to close
+      destination file." or "Failed to close source file."
+
+Bug fixes:
+
+  - Resuming an interrupted folder transfer could put files in the
+    wrong folder.
+  - When SecureCRT was also installed, if the Global Options dialog
+    was closed when the Terminal/Advanced category was active and the
+    Global Options dialog was restarted, the active category was File
+    Transfer/Options/Advanced.
+  - If the transfer queue was enabled, the View menu showed that the
+    transfer queue was disabled when a remote file was being edited.
+  - SCP: If a file was edited remotely and saved, SecureFX crashed
+    when attempting to upload it.
+  - SFTP: If a file was edited remotely, when the file was saved and
+    uploaded, the remote file did not have the correct timestamp.
+  - SFTP: Duplicate messages were logged when transferring files.
+
+
+Changes in SecureFX 6.6 (Beta 4) -- September 16, 2010
+------------------------------------------------------
+
+Changes:
+
+  - The following changes were made to log file output:
+    - All server-to-server "Skipping file transfer" messages are now
+      tagged with "<src>" rather than "<dst>".
+    - "Source path '<path>' does not exist.\n\nIt will be skipped."
+      became "Failed to retrieve information on the source item
+      (<path>).  It will be skipped."
+    - "Failed to retrieve information on the source item.  It will be
+      skipped." became "Failed to retrieve information on the source
+      item (<path>).  It will be skipped."
+    - "Checking remote directory status..." became "Checking
+      destination directory status..."
+    - "Reading remote site directory..." became "Reading source
+      directory..."
+    - "Reading local directory..." became "Reading source
+      directory..."
+
+Bug fixes:
+
+  - SecureFX could crash during a "mirror both" synchronization
+    operation if more than one directory at a time was being
+    synchronized.
+  - When connecting to an MVS server that sent characters other than
+    decimal digits for the "Used" field, files could not be listed or
+    downloaded.
+  - Uploading failed when directory tree detection was disabled.
+  - When multiple folders were transferred in parallel, if one of the
+    transfers was cancelled, the next transfer started, but so did the
+    previously cancelled transfer, which could no longer be cancelled.
+  - When multiple files were transferred in parallel, if a file of
+    unknown type was transferred and ASCII was specified to apply to
+    all files of unknown type, it was only honored for the one file.
+  - When an item in the transfer queue failed to transfer, it could
+    prevent the queue from processing other items.
+  - The "Choose Transfer Type" dialog was displayed multiple times for
+    files with the same extension after specifying the transfer type
+    to be used for all files.
+  - When folders were transferred in parallel, if a file collision
+    occurred, the overwrite prompt was displayed twice.
+
+
+Changes in SecureFX 6.6 (Beta 3) -- August 31, 2010
+---------------------------------------------------
+
+Bug fixes:
+
+  - When folders were transferred, a single file was transferred at a
+    time regardless of the "Maximum number of parallel transfers"
+    value.
+  - If an attempt was made to create a new folder in a location where
+    access was denied, SecureFX crashed.
+
+
+Changes in SecureFX 6.6 (Beta 2) -- August 17, 2010
+---------------------------------------------------
+
+Changes:
+
+  - SSH2/SFTP/SCP: Socket write errors are now written to trace
+    output.
+
+Bug fixes:
+
+  - SecureFX could crash when a synchronize operation caused files to
+    be deleted on the local machine.
+  - When files were being transferred in parallel, cancelling out of
+    the Choose Transfer Type dialog caused the remaining files to get
+    stuck at "Checking destination" and they could not be cancelled.
+  - During synchronization, when the direction was Download, the local
+    path was not displayed.
+  - The color depth of some of the icons on the toolbar was reduced,
+    which caused them to look pixelated.
+  - SFXCL: When multiple files were transferred and a file transfer
+    failed, the log reported that all files were transferred
+    successfully.
+
+
+Changes in SecureFX 6.6 (Beta 1) -- August 3, 2010
+--------------------------------------------------
+
+New features:
+
+  - Limit or "throttle" the bandwidth used during file transfers to
+    keep from consuming all available bandwidth.
+  - Specify the number of parallel file transfers and, as transfers
+    are completed, queued files will continually fill available slots.
+  - Selecting Download on remote files automatically places the files
+    in the local CWD if a different download location has not been
+    specified.
+  - If a PASV data connection fails, SecureFX automatically tries to
+    reconnect using the original host/IP address.
+  - Added an Upload button that can be used for menu and toolbar
+    customization.
+  - The same file size display options that were previously available
+    for the transfer window are now also available for the tree view.
+  - SSL: Support for RFC 2228 Clear Command Channel (CCC) provides
+    enhanced compatibility with SSL servers.
+  - FTP/SSL: Available and negotiated SSL algorithms for implicit
+    as well as explicit connections are now logged.
+  - SFTP: Added the session INI-file-only option "Preferred SFTP
+    Version" that forces SecureFX to use a specific SFTP version.
+  - SSH2: Added support for the "null" host-key algorithm for GSS-KEX
+    as specified in RFC 4462.
+  - SFXCL: A password can be specified when using a session with
+    SFXCL.
+  - SFXCL: Added two new options to the /S switch.  The "TransferType"
+    option allows the transfer type to be specified independently of
+    the file type.  The "Attr" option allows the file type to be
+    specified independently of the transfer type.
+
+Changes:
+
+  - When the "Trace Level" is set to 9, the password is automatically
+    redacted from the trace output.
+
+Bug fixes:
+
+  - SecureFX could crash if a file was being edited or transferred and
+    the remote connection was lost.
+  - SecureFX crashed or hung if the transfer queue refreshed while
+    renaming a previously transferred file.
+  - If a saved synchronize session that used a session with no file
+    transfer protocol specified was run, SecureFX crashed.
+  - Files could not be uploaded to a directory that had write access,
+    but not read access.
+  - SecureFX failed to transfer multiple items in the transfer queue
+    when the connection count was limited.
+  - When a file was dragged into the queue, the file was not always
+    transferred to the current working directory.
+  - Direct server-to-server transfers did not update the time
+    remaining and the throughput correctly.
+  - If the last location in the local window was My Computer or My
+    Network Places (Network Neighborhood), it was not restored when
+    SecureFX was restarted.
+  - Quick Connect sessions where the host was an IPv6 address could
+    not be saved.
+  - If a previously failed item in the transfer queue was re-queued in
+    order to wait for a connection to become available, it could
+    potentially get re-queued over and over and display a large number
+    of failed transfer dialogs.
+  - On Windows, when large font (120 DPI) was used, text on some
+    dialogs was truncated.
+  - FTP: If a file was downloaded to a local mapped drive, SecureFX
+    reported that 0 bytes were downloaded, even though the file was
+    not empty.
+  - SFTP: When connection failed, socket-level errors were not
+    reported or logged.
+  - SFTP: Server-to-server transfers did not log all output for SFTP
+    connections.
+  - SFXCL: When attempting to authenticate using keyboard-interactive
+    authentication and the password was specified in a URL or a
+    session, there was a password prompt.

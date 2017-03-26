@@ -1,0 +1,437 @@
+
+          SecureCRT(R) 6.6.1 (Official) -- November 4, 2010
+
+            Copyright (C) 1995-2010 VanDyke Software, Inc.
+                        All rights reserved.
+
+
+This file contains a SecureCRT product history.  It includes lists 
+of new features, changes, and bug fixes sorted by release.  For a 
+product description, installation notes, registration information,
+and contact information, please refer to Readme.txt (downloaded 
+with this installation).
+
+
+Changes in SecureCRT 6.6.1 (Official) -- November 4, 2010
+---------------------------------------------------------
+
+Changes:
+
+  - MENU_RECEIVE_BINARY was removed from the Map Selected Key dialog's
+    Menu Function list because it is not currently supported.
+  - Mac: Font smoothing is now on by default in new installations.
+  - Mac: When a button is deleted from a button bar, a confirmation
+    prompt is now displayed. 
+
+Bug fixes:
+
+  - Toggling the chat window while a connection was being made could
+    cause SecureCRT to crash.
+  - SecureCRT could crash after running for approximately 5000 hours
+    or in less time if a large number of X/Y/Zmodem transfers were
+    performed.
+  - If a session specified a line send delay and character send delay,
+    the line send delay was also used as the character send delay.
+  - Mac: When a button or key was mapped to send a string that
+    contained a pause (\p), SecureCRT crashed.
+  - Mac: Pasting text into a local shell session could cause that
+    session to stop responding.
+  - Mac: The desktop shortcut created by selecting "Make Alias" in the
+    Connect dialog was not usable.
+  - Mac: If the milliseconds parameter (%t) was specified in the log
+    file or custom log data, the milliseconds were always "000".
+  - Mac: In the Transfer menu, when the "Receive ASCII" menu item was
+    selected, it was not updated with a check mark to indicate that it
+    was receiving ASCII data.
+  - Windows: In order to display a single ampersand character (&) in
+    the button bar, it was necessary to use four ampersand characters.
+    This was inconsistent with versions prior to 6.5, which only
+    required two ampersand characters.
+
+
+Changes in SecureCRT 6.6 (Official) -- October 21, 2010
+-------------------------------------------------------
+
+Bug fixes:
+
+  - If two different sessions were open and they used different
+    button bars and then the chat window was opened in one of the
+    sessions, its button bar was changed to the other session's button
+    bar.
+  - Mac: If the toolbar was on and the SecureCRT window was moved to
+    be just below the Apple menu bar, when SecureCRT restarted, its
+    position changed.
+
+
+Changes in SecureCRT 6.6 (Beta 6) -- October 14, 2010
+-----------------------------------------------------
+
+Changes:
+
+  - When SecureCRT receives an "Invalid packet header" error from the
+    remote system,  the raw encrypted and unencrypted packet headers
+    are logged.
+
+Bug fixes:
+
+  - SecureCRT could crash when key generation was cancelled and then
+    the Key Generation Wizard was launched.
+  - SSH1/SSH2: SecureCRT could crash when attempting to access the
+    Agent keys and the connection was dropped.
+  - Mac: When "~" was specified as the leading character of the
+    configuration folder path, it was always treated literally, even
+    when it should have been treated as the user's home directory.
+  - Mac: If there were multiple SecureCRT windows and the global
+    options "Show cursor position" or "Show window size" were
+    modified, the changes were not propogated to the other windows.
+  - Mac: In the Map Button and Map Select Key dialogs, once the
+    Function menu had a scroll bar, it always had a scrollbar, even
+    when unnecessary.
+
+
+Changes in SecureCRT 6.6 (Beta 5) -- September 30, 2010
+-------------------------------------------------------
+
+Changes:
+
+  - In Python scripting, case is ignored for the language specifier.
+  - SSH2: Remote password change requests are logged in the trace
+    output.
+  - TAPI: Improved error message to be more informational when the COM
+    port is already in use.
+  - Mac: Added toolbar options to display small icons, icons only, and
+    text only.
+  - Mac: When there are no session tabs, the rows, columns, and
+    cursor positions are not shown in the status bar.
+  - Mac: The default action for the Tools button on the toolbar is
+    "Keymap Editor".
+
+Bug fixes:
+
+  - In the Connect dialog, if a new folder was created and the Delete
+    button was pressed while the folder name was still in edit mode,
+    SecureCRT crashed.
+  - In the Connect dialog, if an attempt was made to paste a session
+    that had been previously deleted, SecureCRT crashed.
+  - In a script, calling crt.Sleep after crt.Screen.Synchronous and
+    crt.Screen.Send caused high CPU usage.
+  - When SecureFX was also installed, if the Global Options dialog
+    was closed when the Terminal/Advanced category was active and the
+    Global Options dialog was restarted, the active category was File
+    Transfer/Options/Advanced.
+  - SFTP: The execute escape sequence "sftp-download" failed if the
+    filename contained any spaces.
+  - Windows: If multiple SecureCRT windows were open and all the
+    windows were closed by closing the Activator, SecureCRT could
+    crash.
+  - Windows: The session tab text was cut off when the Windows system
+    setting to use large or extra large fonts was used.
+  - Mac: SecureCRT crashed when attempting to display non-printable
+    characters.
+  - Mac: If the SecureCRT window was closed during a failed
+    authentication attempt and an attempt to display an authentication
+    prompt was made, SecureCRT crashed.
+  - Mac: When quitting SecureCRT, if "No" was answered in response to
+    the confirm disconnect prompt, SecureCRT still exited.
+  - Mac: When multiple SecureCRT windows were open, if the mouse
+    cursor was over the toolbar and then was hidden during typing, if
+    focus was changed to the other window, the mouse cursor remained
+    hidden until it was moved into the terminal window.
+  - Mac: When the status bar was hidden, the application window could
+    not be resized.
+  - Mac: When there was a single tab, pressing COMMAND+W closed the
+    tab instead of closing the application window.
+  - Mac: If a button was configured to run a script with arguments,
+    the arguments were not saved.
+  - Mac: The command-line option /n (set tabname) was not being
+    honored.
+  - Mac: When focus was in the tab bar, scrolling with the mouse
+    scroll wheel scrolled the terminal window in addition to scrolling
+    the tabs.
+  - Mac: If there were two tabbed sessions and one was moved to a new
+    window, tab operations such as "Move Tab To New Window" and
+    "Select Next Tab" were still available in the original window.
+  - Mac: In the Global or Session Options dialogs, if the
+    Terminal/Printing category contained a print margin that was not
+    valid and then the up or down arrow was used to navigate to a
+    different category, the highlighted category was not correct.
+
+
+Changes in SecureCRT 6.6 (Beta 4) -- September 16, 2010
+-------------------------------------------------------
+
+Changes:
+
+  - Added documentation for Python scripting.
+  - Windows: Added a Global.ini-file-only option to make the tab
+    bar taller, which prevents the session name from being cut off
+    in the tab when the Windows Appearance setting "Large Fonts" or
+    "Extra Large Fonts" is set.
+  - Mac: Improved the scrolling speed in local shell sessions.
+  - Mac: Modified the toolbar to contain text and larger icons.
+  - Mac: The following keyboard shortcuts were changed or added:
+    - COMMAND+T opens a new tab.
+    - COMMAND+N opens a new SecureCRT window.
+    - SHIFT+COMMAND+W closes the window if there's more than one tab.
+    - COMMAND+L opens a local shell session.
+    - COMMAND+OPTION+G switches focus between the terminal and chat
+      windows.
+    - COMMAND+G in the Find dialog does a Find Next operation.
+  - Mac: Icons were removed from the application menus.
+
+Bug fixes:
+
+  - SecureCRT could crash when a binary file was sent using Send
+    ASCII.
+  - In a script, when ConnectInTab was called without a hostname, the
+    script would hang.
+  - If a script was used to change the port forward settings for the
+    session that launched the script, the settings were not saved.
+  - In Python scripting, WaitForStrings and MatchIndex returned a
+    0-based index instead of a 1-based index, which made it difficult
+    to distinguish between a timeout and the first string being
+    matched.
+  - In Python scripting, the ReadString or WaitForStrings methods did
+    not return the text up to and including the matched string.
+  - After printing a document, if the print margins were not the
+    minimum size, they were changed to the minimum.
+  - SSH1/SSH2: When accessing the host key database, it was locked for
+    writing, which could cause the host key database to be
+    unavailable, particularly when multiple connections were scripted.
+  - Mac: SecureCRT could crash on startup.
+  - Mac: Moving tabbed sessions between instances of SecureCRT could
+    cause SecureCRT to crash.
+  - Mac: SecureCRT could crash if multiple sessions were opened from
+    the Connect dialog.
+  - Mac: SecureCRT crashed if the configuration folder was located on
+    a mounted drive that was not available when SecureCRT started.
+  - Mac: Pressing COMMAND+R caused SecureCRT to crash.
+  - Mac: SecureCRT exited when the SecureCRT application window
+    closed.
+  - Mac: Send Binary could hang when attempting to send a binary file.
+  - Mac: When text was pasted from SecureCRT into certain
+    applications, such as Microsoft Entourage or Word, the text was
+    not formatted correctly.
+  - Mac: If the SecureCRT window was positioned at the top of an
+    external monitor when it was closed and then the monitor layout
+    was adjusted to lower the external monitor, the SecureCRT window
+    was displayed off screen when it was restarted.
+  - Mac: If the SecureCRT window was moved to an external monitor and
+    the monitor layout was adjusted, SecureCRT did not move.
+  - Mac: It was not possible to make the application window narrower
+    than the width that the toolbar buttons spanned.
+  - Mac: In the Connect dialog, when the left arrow was pressed on an
+    expanded folder, it did not collapse.
+  - Mac: In the Global and Session Options dialogs, in the Printing
+    category, errors in the print margins could result in multiple
+    error dialogs.
+  - Mac: In the Global and Session Options dialogs, in the Printing
+    category, more than three decimals were displayed for the print
+    margins although only three decimal places could be entered
+    manually.
+
+
+Changes in SecureCRT 6.6 (Beta 3) -- August 31, 2010
+----------------------------------------------------
+
+Changes:
+
+  - Mac: Added the ability to clone local shell sessions.
+  - Mac: Added a global option to use Keychain when session passwords
+    are saved.
+  - Mac: The default public-key file location is ~home/.ssh.
+  - Mac: COMMAND+N brings up a new SecureCRT window, COMMAND+T
+    connects a new tab, and SHIFT+COMMAND+W closes the SecureCRT
+    window if there's more than one tab.
+  - Mac: In the Connect dialog, COMMAND+N creates a new session and
+    COMMAND+OPTION+N creates a new folder.
+
+Bug fixes:
+
+  - Mac: Removed threaded clipboard code, because it could cause
+    SecureCRT to crash when launching or connecting to a session.
+  - Mac: If the application window had closed, but the Connect dialog
+    was displayed, pressing the Connect button caused SecureCRT to
+    crash.
+  - Mac: SecureCRT could freeze when connecting to multiple sessions
+    at once if they all displayed the accept host-key prompt.
+  - Mac: On systems with the region set to a European country, after
+    navigating to the Printing category in the Global Options dialog,
+    it was not possible to navigate to another category or close the
+    dialog.
+  - Mac: If the global option "Show connection closed dialog" was set
+    and a file browse dialog was displayed and then a session
+    disconnected causing the connection closed dialog to be displayed,
+    the file browse dialog could not be closed.
+  - Mac: If the elapsed time was being displayed and the day changed,
+    the elapsed time was not displayed correctly.
+
+
+Changes in SecureCRT 6.6 (Beta 2) -- August 17, 2010
+----------------------------------------------------
+
+Changes:
+
+  - The Edit menu displays the appropriate hotkeys for Copy and Paste
+    depending on what the "Use Windows copy and paste hotkeys" option
+    is set to for the active session.
+  - SSH2/SFTP: Socket write errors are now written to trace output.
+  - Mac: Sessions to the local shell are not disconnected when the
+    computer sleeps.
+  - Mac: In the Map Button and Map Key dialogs, menu functions that
+    only apply to Windows were removed.
+
+Bug fixes:
+
+  - If a session was disconnected during key exchange, SecureCRT
+    crashed.
+  - If Crt.Quit was called from a Python script, a race condition was
+    introduced, which could cause SecureCRT to crash.
+  - If the Find dialog was open for a tabbed session and then another
+    tab was activated, the Find dialog had focus.
+  - If several sessions and SFTP tabbed sessions were connected and
+    then the SFTP tabbed sessions were disconnected and reconnected,
+    the tab status indicator and/or menu items sometimes did not
+    reflect the correct connect status.
+  - In the Global Options dialog, in the Printing category, if the
+    left margin was changed to an invalid margin, the top margin was
+    also changed.
+  - When using X11 mouse positioning, if the global option "Paste on
+    middle button" was set, the context menu was displayed in addition
+    to the paste operation.
+  - Telnet: When CTRL+S was used to suspend output to the terminal,
+    there was a significant delay (at least ten seconds) before output
+    was suspended.
+  - Telnet: Send binary did not work.
+  - Windows: Dragging the "Send chat to all tabs" title bar up to the
+    main application window caused SecureCRT to crash.
+  - Windows: The menu item "Go to Session Window" was never toggled
+    to "Go to Chat Window".
+  - Windows: When the "Hide pointer while typing" option was set and
+    typing was done in another application, when the mouse was moved
+    to the SecureCRT window, the mouse pointer was not displayed
+    sometimes.
+  - Mac: The SecureCRT application's code has been signed, which
+    eliminates a network activity prompt that may have been displayed
+    when the file open dialog was opened.
+  - Mac: If the global "Recently used session list" value was set to 0
+    in a new configuration, SecureCRT crashed.
+  - Mac: If a button or key was mapped to launch an application and
+    the application path contained spaces, the application was not
+    launched.
+  - Mac: If the Default Session was modified to use a button bar other
+    than "Default", the specified button bar was not used when
+    SecureCRT started.
+  - Mac: If a button with no label was added to the button bar, it
+    could not be edited.
+  - Mac: After toggling full screen, focus was not in the terminal
+    session.
+  - Mac: When multiple SecureCRT windows were opened, they were not
+    cascaded.
+  - Mac: If the SecureCRT window was maximized and subsequent SecureCRT
+    windows were opened, they were not displayed in the correct 
+    position with the correct geometry.
+  - Mac: If SecureCRT was positioned at the upper left corner, it was
+    positioned in a slightly higher location when it was restarted.
+  - Mac: Sometimes after disconnecting from all sessions using the
+    "Disconnect All" menu item, "Disconnect All" was still enabled.
+  - Mac: The global INI-file-only option "Disable Close" was not being
+    honored.
+
+
+Changes in SecureCRT 6.6 (Beta 1) -- August 3, 2010
+---------------------------------------------------
+
+New features:
+
+  - SecureCRT for Mac OS X delivers right out of the gate, with
+    reliable, mature terminal emulation, tabbed sessions, security,
+    powerful session configuration, and printing support.
+  - SecureCRT for Mac OS X adds support for the local command shell.
+  - Added embedded support for the Python scripting language.
+  - New Raw protocol mode allows for no (or little) interpretation of
+    data from the remote system, which is helpful for
+    troubleshooting.
+  - Added a "Send Binary" transfer option.
+  - A unique log name is automatically generated when the specified
+    name is in use (e.g., cloned or SFTP sessions).
+  - Arguments can be passed to scripts from buttons and mapped keys.
+  - Added new double-click options to tabs; these options are "Send
+    Tab to New Window" and "Reconnect Tab".
+  - On Windows, the button bar can be positioned at the top of the
+    SecureCRT window.
+  - Added an option to ConnectInTab() that will allow for silent
+    failure when it fails to connect to a host.
+  - SSH1/SSH2: Added support for the "null" host-key algorithm for
+    GSS-KEX as specified in RFC 4462.
+
+Changes:
+
+  - Added "Manage Agent Keys" to the Tools menu.
+  - When the "Trace Level" is set to 9, the password is automatically
+    redacted from the trace output.
+  - In the Quick Connect dialog, if the protocol is changed from SSH1
+    or SSH2 to any other protocol, the port is changed to the default
+    port.
+  - In the Global and Session Options dialogs, the options in the
+    Advanced Printing category were moved to the Printing category.
+
+Bug fixes:
+
+  - If "\p" was specified in an anti-idle string, SecureCRT could
+    crash after the string was sent.
+  - If a tab completion was cancelled on a slow server and then the
+    connection was closed, SecureCRT could crash.
+  - When sessions were cloned using "Clone in New Window",
+    configuration information could potentially be written at the same
+    time, causing SecureCRT to crash.
+  - SecureCRT opened an SFTP channel when opening the Session Options
+    dialog, which could cause the active session to disconnect.
+  - If SecureCRT was launched more than once on the same machine
+    using different configuration folders and a session that existed
+    in one configuration, but not the other, was opened in the
+    Activator, the instances of SecureCRT that did not contain the
+    session crashed.
+  - Quick Connect sessions where the host was an IPv6 address could
+    not be saved.
+  - The blink attribute was not honored when the SecureCRT window was
+    maximized and the cursor was outside the session's original
+    geometry settings.
+  - Dismissing the Find dialog in a different tab than it was started
+    from could cause output to suspend.
+  - When the option "Only show tabs when there are more than one" was
+    enabled and a second tab failed to connect, the tab bar was not
+    displayed.
+  - When multiple sessions were edited at the same time, port forward
+    changes were not always saved correctly.
+  - In the Printing category in the Global and Session Options
+    dialogs, invalid margins could be saved.
+  - Cloning a non-SSH2 session in a script caused the script to hang.
+  - In the ReceiveXmodem script function, the "Download" folder was
+    not honored.
+  - If the scripting clipboard format was set to an invalid format,
+    the last error was not set correctly.
+  - The CRT.Session.Connect script method did not allow a script to
+    capture in-terminal SSH2 username or password prompts.
+  - If SecureCRT was displayed on a second monitor when it exited and
+    only one monitor was available the next time it ran, SecureCRT
+    was still displayed on the second monitor.
+  - If full-screen mode was entered before a session was connected
+    and then full-screen mode was exited, the SecureCRT window was
+    displayed partially off screen.
+  - On the 64-bit version of Windows 7, tab preview functions did not
+    work.
+  - On Windows, when large font (120 DPI) was used, text on some
+    dialogs was truncated and buttons on the Keymap Editor dialog
+    were cut off.
+  - If an X11 error occurred, the error message was displayed behind
+    the SecureCRT window.
+  - Serial: The XOFF setting was not being honored, which could cause
+    input to go to the wrong session when more than one Serial
+    session was connected.
+  - SSH1/SSH2: If an accept host-key prompt was displayed during key
+    exchange and the protocol NOOP anti-idle expired, the SecureCRT
+    window could hang.
+  - SFTP: SecureCRT crashed when trying to open an SFTP tab if the
+    remote server did not support SFTP.
+  - SFTP: Memory was leaked when SFTP tabs were closed.
